@@ -6,13 +6,15 @@ these are lengthy numbers and people aren't likely to remember them, so instead 
 When handing over a server to a client, we want to be able to remove the "/3000" at the end, we can do this via
 reverse proxy. Therefore, our Node Application will run from that address.
 
-## Topics
+NGINX will listen for requests on port 80 and pass them onto our app on port 3000
+
+## Topics 
 
 ### 1) What is A Reverse Proxy
 
 ### 2) Creating Our Own Reverse Proxy
 
-### 3) Automating this Process Using Bash Scripts
+### 3) Automating This Process Using Bash Scripts
 
 
 
@@ -24,7 +26,7 @@ backend server.
 
 
 
-## Creating Our Reverse Proxy
+### Creating Our Reverse Proxy
 
 - Within sites-available, we have a default server that acts as the homepage for NGINX, in order to change the process we must
 delete the default page and recreate a new one with the configurations we would like
@@ -68,7 +70,7 @@ server {
 
 ```
 
-## Automating The Process Using Bash Scripts
+### Automating This Process Using Bash Scripts
 
 
 - When you create a profile inside a vm, it will inherit everything inside .bashrc
