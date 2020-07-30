@@ -1,12 +1,12 @@
-# NGINX Reverse Proxy
+# NGINX Reverse Proxy :computer:
 
 Earlier on in the week we discussed that typing an IP address into the URL bar would be difficult for any user,
 these are lengthy numbers and people aren't likely to remember them, so instead we used "development.local:3000/"
 
 When handing over a server to a client, we want to be able to remove the "/3000" at the end, we can do this via
-reverse proxy.
+reverse proxy. Therefore, our Node Application will run from this address
 
-What is a Reverse Proxy Server
+### What is a Reverse Proxy Server
 
 - A type of proxy server that sits behind the firewall in a private network and directs client requests to the appropriate
 backend server.
