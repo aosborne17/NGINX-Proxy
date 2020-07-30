@@ -4,7 +4,7 @@ Earlier on in the week we discussed that typing an IP address into the URL bar w
 these are lengthy numbers and people aren't likely to remember them, so instead we used "development.local:3000/"
 
 When handing over a server to a client, we want to be able to remove the "/3000" at the end, we can do this via
-reverse proxy. Therefore, our Node Application will run from this address
+reverse proxy. Therefore, our Node Application will run from that address.
 
 ## Topics
 
