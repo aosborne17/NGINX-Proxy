@@ -10,7 +10,7 @@ reverse proxy. Therefore, our Node Application will run from that address.
 
 ### 1) What is A Reverse Proxy
 
-### 2) Creating Our Reverse Proxy
+### 2) Creating Our Own Reverse Proxy
 
 ### 3) Automating this Process Using Bash Scripts
 
