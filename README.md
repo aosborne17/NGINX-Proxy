@@ -49,13 +49,14 @@ To overcome this, we can use a Virtual Private Network (VPN) which hides our IP 
 ---
 
 ### What is A Reverse Proxy
+
 - A type of proxy server that sits behind the firewall in a private network and directs client requests to the appropriate
 backend server.
 - Reverse Proxies are implemented to help security, performance as well as managing flow of traffic to the website
 
 
 
-![Proxy Image](images/reverse-proxy-server-diagram_1.png)
+![Proxy Image](images/Reverse-Proxy-Flow.svg)
 
 ---
 
