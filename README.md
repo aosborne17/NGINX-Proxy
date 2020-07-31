@@ -16,15 +16,20 @@ NGINX will listen for requests on port 80 and pass them onto our app on port 300
 
 ### 3) Automating This Process Using Bash Scripts
 
+---
 
 
 ### What is a Reverse Proxy Server
 
 - A type of proxy server that sits behind the firewall in a private network and directs client requests to the appropriate
 backend server.
-- 
+- Reverse Proxies are implemented to help security, performance as well as managing flow of traffic to the website
 
 
+
+![Proxy Image](images/reverse-proxy-server-diagram_1.png)
+
+---
 
 ### Creating Our Reverse Proxy
 
@@ -69,14 +74,11 @@ server {
 ```bash
 
 ```
+---
 
 ### Automating This Process Using Bash Scripts
 
 
-- When you create a profile inside a vm, it will inherit everything inside .bashrc
-- Our vagrant file and our Virtual Machine are two different things, when we do vagrant destroy
-our VM is destroyed but our vagrant folder is still there
-thus .profile is still present.
 
 
 
@@ -87,9 +89,6 @@ thus .profile is still present.
 
 
 
-
-
-### Additional ways
 ```bash
 echo "server{listen 80;
   listen 80;
@@ -98,11 +97,3 @@ echo "server{listen 80;
   }
 }" >> reverse-proxy.conf
 ```
-
-``` > ``` redirects output to a file, overwriting the file
-``` >> ``` redirects output to a file appending the redirected output at the end
-
-ctrl k at start of the line ---> Removes whole line
-
-
-killall node
