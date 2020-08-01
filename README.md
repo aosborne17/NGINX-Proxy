@@ -154,25 +154,11 @@ This removes the symlink from the 'sites-enabled' folder, meaning that the 'defa
 however it is no longer active.
 
 We have instead created a link to another file, 'reverse-proxy.conf' which will have the configurations of our 
-reverse proxy
+reverse proxy.
 
-'sudo ln' means we are creating a symbolic link to an existing file
+'sudo ln' means we are creating a symbolic link to an existing file.
 
-We must then restart nginx in order for these changes to take place
-
-
+We must then restart nginx in order for these changes to take place.
 
 
 
-
-
-
-
-```bash
-echo "server{listen 80;
-  listen 80;
-  location / {
-      proxy_pass http://192.168.10.100.3000;
-  }
-}" >> reverse-proxy.conf
-```
