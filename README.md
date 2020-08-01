@@ -50,14 +50,36 @@ To overcome this, we can use a Virtual Private Network (VPN) which hides our IP 
 
 ### What is A Reverse Proxy
 
-- A type of proxy server that sits behind the firewall in a private network and directs client requests to the appropriate
-backend server.
-- Reverse Proxies are implemented to help security, performance as well as managing flow of traffic to the website
-
+- A reverse proxy is a server that sits in front of one or more web servers, intercepting requests sent from the client
+- The reverse proxy will then sent requests to and receive requests from the origin server
 
 
 ![Proxy Image](images/Reverse-Proxy-Flow.svg)
 
+- Usually all requests from computer D would go directly to server F.
+- With a reverse proxy however, all request go from D to E and then E will forward the requests to F,
+the appropriate response will then be sent back from F to E and then to the client D
+
+### Benefits Of A Reverse Proxy
+
+1. **Protection From Attacks**
+- With having reverse proxies in place, the origin server never needs to reveal their IP address
+making it much harder to be a victim of cyber attacks
+
+2. **Caching**
+- A reverse proxy can temporarily store data when a request is made to a web site, if another person tries
+to access this same site in a nearby area, the content would load much faster as the request only has to go to the
+reverse proxy and back
+
+3. **Load Balancing**
+- Reverse proxies can evenly distribute incoming traffic to different servers to make sure no single server becomes
+overloaded
+
+
+Forward Proxy | Reverse Proxy
+-----|------
+Sits in front of a client|Sits in front of an origin server 
+Ensures no origin server ever communicates directly with that specific client| Ensures that no client ever communicates directly with that origin server
 ---
 
 ### Creating Our Reverse Proxy
