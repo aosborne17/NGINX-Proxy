@@ -82,7 +82,7 @@ Sits in front of a client|Sits in front of an origin server
 Ensures no origin server ever communicates directly with that specific client| Ensures that no client ever communicates directly with that origin server
 ---
 
-### Creating Our Reverse Proxy
+### Creating Our Own Reverse Proxy
 
 - Within sites-available, we have a default server that acts as the homepage for NGINX, in order to change the process we must
 delete the default page and recreate a new one with the configurations we would like
