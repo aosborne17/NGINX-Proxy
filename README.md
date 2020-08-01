@@ -129,8 +129,36 @@ server {
 
 ### Automating This Process Using Bash Scripts
 
+- Instead of having to do the above process on every occasion, we can automate this process in a provision file
+- This means that every time we run our VM, our reverse proxy will be created
+- In order to do this, we will have to add the following configurations to the provision.sh file 
 
 
+```bash
+# Configuring nginx proxy
+sudo unlink /etc/nginx/sites-enabled/default
+cd /etc/nginx/sites-available
+sudo touch reverse-proxy.conf
+sudo chmod 666 reverse-proxy.conf
+echo "server{
+  listen 80;
+  location / {
+      proxy_pass http://192.168.10.100:3000/;
+  }
+}" >> reverse-proxy.conf
+sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabl>
+sudo service nginx restart
+
+```
+This removes the symlink from the 'sites-enabled' folder, meaning that the 'default' file will still be there
+however it is no longer active.
+
+We have instead created a link to another file, 'reverse-proxy.conf' which will have the configurations of our 
+reverse proxy
+
+'sudo ln' means we are creating a symbolic link to an existing file
+
+We must then restart nginx in order for these changes to take place
 
 
 
