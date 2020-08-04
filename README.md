@@ -230,4 +230,29 @@ connect to the database due to the provision script inside the App Vm
  
  - When we tried to change the default file using bash scripts there seemed to be issues and thus we used a different
  method with reverse-proxy.conf
-  
+ 
+ 
+### Changes Made
+
+
+```bash
+# Configuring nginx proxy
+# sudo unlink /etc/nginx/sites-enabled/default
+cd /etc/nginx/sites-available
+# sudo touch reverse-proxy.conf
+# sudo chmod 666 reverse-proxy.conf
+sudo chmod 666 default
+echo "server{
+  listen 80;
+  location / {
+      proxy_pass http://192.168.10.100:3000/;
+  }
+}" > default
+# sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf
+sudo service nginx restart
+```
+
+- Here we have been able to use the default file to add the reverse proxy, just like the config file we have given the default
+file read and write access and we have then used echo to add the configuartion to the code
+
+- On this instance we have only used one ">" which ensures that we overwrite whatever is already in the file
