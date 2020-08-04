@@ -89,11 +89,16 @@ for step by step installations
 
 [Click Here](https://github.com/aosborne17/Vagrant-Introduction/blob/master/README.md)
 
+
+
 - Within sites-available, we have a default server that acts as the homepage for NGINX, in order to change the process we must
 delete the default page and recreate a new one with the configurations we would like
 
-- Once the VM is up and running, vagrant ssh into the VM named app and make your way to the location of 'sites available'
-which can be found on the path below:
+
+
+- From the file where our vagrant file is available, we run ```vagrant up```, followed by ```vagrant app ssh``` which allows us to
+enter our VM, we then run the command ``` cd ``` which take us to the root directory. From here we can now navigate
+to the directory where our default file is found using the path below:
 
 ```bash
 cd /etc/nginx/sites-available
@@ -153,11 +158,12 @@ echo "server{
 }" >> reverse-proxy.conf
 sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf>
 sudo service nginx restart
-
 ```
 **The above code looks very complex but it can be logically broken down**
 
-``` sudo unlink /etc/nginx/sites-enabled/default ```
+``` 
+sudo unlink /etc/nginx/sites-enabled/default 
+```
 This removes the symlink from the 'sites-enabled' folder, meaning that the 'default' file will still be there
 however it is no longer active.
 
@@ -166,7 +172,7 @@ cd /etc/nginx/sites-available
 sudo touch reverse-proxy.conf
 ```
 We have then navigated to the sites available folder and created the above file
-We now create a link to this file which will have the configurations of our reverse proxy.
+We can now create a link to this file which will have the configurations of our reverse proxy.
 
 ``` chmod 666 reverse-proxy.conf ``` 
 This command means that we have given this file read and write access but not executable
@@ -181,14 +187,15 @@ echo "server{
 }" >> reverse-proxy.conf
 ```
 echo command allows us to display text, in this case we have displayed the text of the reverse proxy configuration
-The ">>" sign that we have seen means that we redirect the output to a file, appending the redirected output at the end
+The ">>" sign means that we have seen means that we redirect the output to a file, appending the redirected output at the end
 
 'sudo ln' means we are creating a symbolic link to an existing file, in this case the file we have just created
 
 We must then restart nginx in order for these changes to take place.
 
 
-After adding these configurations to our script, our application should run as we have added
+After adding these configurations to our script, our application should run when we vagrant up
+ from the command as we have added
 ``` node app.js ``` to our provision file as seen below
 
 ```bash
@@ -223,4 +230,6 @@ http://development.local/posts
 connect to the database due to the provision script inside the App Vm
  This was overcame by running the DB VM before the App
  
- - When we tried to implement 
+ - When we tried to change the default file using bash scripts there seemed to be issues and thus we used a different
+ method with reverse-proxy.conf
+  
