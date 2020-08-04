@@ -85,9 +85,7 @@ Ensures no origin server ever communicates directly with that specific client| E
 ### Creating Our Own Reverse Proxy
 
 - If you have not previously used or created a Virtual Machine using Vagrant and GIT terminal, refer to the link below
-for step by step installations
-
-[Click Here](https://github.com/aosborne17/Vagrant-Introduction/blob/master/README.md)
+for step by step installations [Click Here](https://github.com/aosborne17/Vagrant-Introduction/blob/master/README.md)
 
 
 
