@@ -84,6 +84,12 @@ Ensures no origin server ever communicates directly with that specific client| E
 
 ### Creating Our Own Reverse Proxy
 
+- If you have not previously used or created a Virtual Machine using Vagrant and GIT terminal, refer to the link below
+for step by step installations
+
+
+[:Click Here:](https://github.com/aosborne17/Vagrant-Introduction/blob/master/README.md)
+
 - Within sites-available, we have a default server that acts as the homepage for NGINX, in order to change the process we must
 delete the default page and recreate a new one with the configurations we would like
 
@@ -161,4 +167,32 @@ reverse proxy.
 We must then restart nginx in order for these changes to take place.
 
 
+After adding these configurations to our script, our application should run as we have added
+``` node app.js ``` to our provision file as seen below
+
+```bash
+# install nodejs
+sudo apt-get install python-software-properties
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs -y
+
+# install pm2
+sudo npm install pm2 -g
+
+#App set up
+export DB_HOST="mongodb://192.168.10.150:27017/posts"
+cd /home/ubuntu/app
+sudo su
+npm install
+node app.js
+
+```
+
+Now we should be able to see our application on Three different URL's
+
+```bash
+http://development.local/
+http://development.local/fibonacci/8
+http://development.local/posts
+```
 
