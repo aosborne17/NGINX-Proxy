@@ -218,7 +218,7 @@ Now we should be able to see our application on Three different URL's
 
 ```bash
 http://development.local/
-http://development.local/fibonacci/8
+http://development.local/fibonacci/4
 http://development.local/posts
 ```
 
