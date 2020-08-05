@@ -9,9 +9,15 @@
 ### Cloning the repository
 
 - We can download this Repository locally by downloading the zip folder
-- We then unzip the folder and open up the command line 'favourably git bash'
+- We then unzip the folder, save it in the directory we would like and locate here
+- Once here, we can use file explorer to enter git bash from this specific location, as shown below
+
+![Entering GitBash](images/accessing-git-bash-from-file-explorer.png)
+
+**Ensure that you are running git bash as an administrator**
 
 ### Ensuring the downloads have taken place
+- Run these commands in the commandline to ensure we have the correct versions of the softwares
 ```commandline
 vagrant --version #Should return version 2.2.7
 ruby --version #Should return version 2.6.6p146
