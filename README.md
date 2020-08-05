@@ -1,5 +1,7 @@
 # NGINX Reverse Proxy :computer:
 
+## Refer to the Simple Steps Markdown file which explains how to run the application, this can be found [here](https://github.com/aosborne17/NGINX-Reverse-Proxy/blob/master/SIMPLE-STEPS.md)
+
 Earlier on in the week we discussed that typing an IP address into the URL bar would be difficult for any user,
 these are lengthy numbers and people aren't likely to remember them, so instead we used "development.local:3000/"
 
