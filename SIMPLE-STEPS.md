@@ -12,7 +12,6 @@
 - We then unzip the folder, save it in the directory we would like and locate here
 - Once here, we can use file explorer to enter git bash from this specific location, as shown below
 
-![Entering GitBash](images/accessing-git-bash-from-file-explorer.png)
 ![Entering GitBash2](images/file-explore-to-git-2.gif)
 
 **Ensure that you are running git bash as an administrator**
